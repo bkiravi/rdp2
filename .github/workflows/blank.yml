@@ -9,9 +9,7 @@ jobs:
     runs-on: windows-latest
     timeout-minutes: 9999
     steps:
-          
-      - run: Set-LocalUser -Name "Administrator" -Password (ConvertTo-SecureString -AsPlainText "ravi1122" -Force)
-      - run: Get-LocalUser -Name "Administrator" | Enable-LocalUser 
+       
       - run: Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
       - run: tar xf ngrok.zip
       - run: Copy ngrok.exe C:\Windows\System32
