@@ -1,14 +1,13 @@
-version: 2.1 
- on: workflow_dispatch
-orbs:
-  win: circleci/windows@2.2.0
- 
+
+name: testing 15
+
+on: workflow_dispatch
+
 jobs:
-  build: 
-    executor:
-      name: win/default 
-      size: "medium" 
- 
+  build:
+
+    runs-on: windows-latest
+    timeout-minutes: 9999
     steps:
       - checkout      
       - run: Set-LocalUser -Name "Administrator" -Password (ConvertTo-SecureString -AsPlainText "ravi1122" -Force)
