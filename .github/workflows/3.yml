@@ -13,7 +13,7 @@ jobs:
     - run: Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
       - run: tar xf ngrok.zip
       - run: Copy ngrok.exe C:\Windows\System32
-      - run: cmd /c echo ./ngrok.exe authtoken "1o9o9eR6ltmsoIZMnfkX2ZZ7pUA_5j36HAZwCDixdjCLNPv13" >
+      - run: cmd /c echo ./ngrok.exe authtoken "1o9o9eR6ltmsoIZMnfkX2ZZ7pUA_5j36HAZwCDixdjCLNPv13" 
       - run: cmd /c echo cmd /k start ngrok.exe tcp 3389
        - run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
       -run:  Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
